@@ -1,0 +1,259 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    position: relative;
+    background-color: black;
+    height: 100vh;
+}
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 15px 12.5%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100px;
+}
+
+.header .menu a{
+    position: relative;
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    font-weight: 600;
+    margin-right: 30px;
+}
+
+.header .menu a::after{
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 5px;
+    background-color: white;
+    border-radius: 5px;
+    transition: .5s;
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+.header .menu a:hover::after{
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.search-bar{
+    width: 250px;
+    height: 45px;
+    background: transparent;
+    border-radius: 6px;
+    border: 1px solid white;
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input{
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    padding-left: 10px;
+}
+
+.search-bar input::placeholder{
+    color: #e4e4e4;
+}
+
+.search-bar button{
+    width: 40px;
+    height: 40px;
+    border: none;
+    outline: none;
+    background: transparent;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.search-bar button i{
+    font-size: 22px;
+    color: #e4e4e4;
+}
+
+.background{
+    width: 100%;
+    height: 100vh;
+    background: url(https://images.unsplash.com/photo-1682936366238-b0a5bde0155b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80) no-repeat center;
+    background-size: cover;
+    background-position: center;
+}
+
+.container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 75%;
+    height: 550px;
+    background: url(https://images.unsplash.com/photo-1682936366238-b0a5bde0155b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80) no-repeat center;
+    background-size: cover;
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+    margin-top: 20px;
+}
+
+.container .content{
+    top: 0;
+    left: 0;
+    width: 60%;
+    height: 100%;
+    text-align: center;
+}
+
+.container .logref-box{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: calc(100% - 60%);
+    height: 100%;
+    overflow: hidden;
+}
+
+.logref-box .form-box{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    color: white;
+    backdrop-filter: blur(20px);
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.logref-box .form-box.login{
+    transform: translateX(0px);
+    transition: transform .6s ease;
+    transition-delay: 0.7s;
+}
+
+.logref-box.active .form-box.login{
+    transform: translateX(500px);
+    transition-delay: 0s;
+}
+
+.logref-box .form-box.register{
+    transform: translateX(500px);
+    transition: transform .6s ease;
+    transition-delay: 0s;
+}
+
+.logref-box.active .form-box.register{
+    transform: translateX(0px);
+    transition-delay: 0.7s;
+}
+
+.form-box h2{
+    font-size: 32px;
+    text-align: center;
+}
+
+.form-box .input-box{
+    position: relative;
+    width: 340px;
+    height: 50px;
+    border-bottom: 1px solid #e4e4e4;
+    margin: 20px 0;
+}
+
+.input-box input{
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: white;
+    padding-right: 30px;
+}
+
+.input-box label{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    font-size: 16px;
+    font-weight: 500;
+    pointer-events: none;
+    transition: .5s ease;
+}
+
+.input-box input:focus ~ label,
+.input-box input:valid ~ label{
+    top: -5px;
+}
+
+.input-box .icon{
+    position: absolute;
+    top: 50%;
+    right: 0;
+}
+
+.remember-forgot{
+    font-size: 14.5px;
+    font-weight: 500;
+    margin: 15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.remember-forgot label input{
+    accent-color: #e4e4e4;
+    margin-right: 3px;
+}
+
+.remember-forgot a{
+    color: #e4e4e4;
+    text-decoration: none;
+}
+
+.remember-forgot a:hover{
+    text-decoration: underline;
+}
+
+.btn{
+    width: 100%;
+    height: 50px;
+    background: #c4103d;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #e4e4e4;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.form-box .login-register{
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.login-register p a{
+    text-decoration: none;
+    color: #e4e4e4;
+    font-weight: 600;
+}
